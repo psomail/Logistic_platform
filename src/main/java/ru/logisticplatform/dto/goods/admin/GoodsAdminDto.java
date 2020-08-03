@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.dto.goods.GoodsTypeDto;
 import ru.logisticplatform.dto.goods.GoodsTypeUserDto;
+import ru.logisticplatform.dto.user.AdminUserDto;
 import ru.logisticplatform.model.goods.Goods;
 import ru.logisticplatform.model.goods.GoodsPrivate;
 import ru.logisticplatform.model.goods.GoodsType;
@@ -34,6 +35,7 @@ public class GoodsAdminDto {
     Double volume;
     Double carrying;
     GoodsPrivate goodsPrivate;
+    AdminUserDto user;
     Date created;
     Date updated;
 

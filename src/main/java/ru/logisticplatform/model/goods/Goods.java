@@ -43,4 +43,6 @@ public class Goods extends BaseEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     User user;
+
+
 }

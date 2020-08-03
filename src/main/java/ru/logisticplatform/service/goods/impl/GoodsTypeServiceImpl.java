@@ -38,7 +38,7 @@ public class GoodsTypeServiceImpl implements GoodsTypeService {
             return null;
         }
 
-        log.info("IN GoodsTypeServiceImpl findById - goodsType: {} found by id: {}", goodsType);
+        log.info("IN GoodsTypeServiceImpl findById - goodsType: {} found by id: {}", goodsType, id);
 
         return goodsType;
     }

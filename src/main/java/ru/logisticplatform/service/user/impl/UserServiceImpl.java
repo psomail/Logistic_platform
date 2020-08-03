@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
             return null;
         }
 
-        log.info("IN UserServiceImpl findById - user: {} found by id: {}", result);
+        log.info("IN UserServiceImpl findById - user: {} found by id: {}", result, id);
         return result;
     }
 

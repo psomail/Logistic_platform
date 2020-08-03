@@ -60,6 +60,21 @@ public class User extends BaseEntity {
     private UserStatus userStatus;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
-    @JsonIgnore
+    //@JsonIgnore
     List<Goods> goods;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", userTypes=" + userTypes +
+                ", userStatus=" + userStatus +
+                '}';
+    }
 }

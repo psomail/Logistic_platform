@@ -20,7 +20,7 @@ public class GoodsType extends BaseEntity {
     String name;
 
     @OneToMany(mappedBy = "goodsType", fetch = FetchType.LAZY)
-    @JsonIgnore
+    //@JsonIgnore
     List<Goods> goods;
 
     @Override

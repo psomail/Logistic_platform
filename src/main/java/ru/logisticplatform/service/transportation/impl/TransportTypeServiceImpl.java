@@ -30,7 +30,7 @@ public class TransportTypeServiceImpl implements TransportTypeService {
             return null;
         }
 
-        log.info("IN TransportTypeServiceImpl findById - transportType: {} found by id: {}", transportType);
+        log.info("IN TransportTypeServiceImpl findById - transportType: {} found by id: {}", transportType, id);
 
         return transportType;
     }
