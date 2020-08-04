@@ -1,6 +1,8 @@
 package ru.logisticplatform.model;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
@@ -19,19 +21,20 @@ import java.util.Date;
 
 @MappedSuperclass
 @Data
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    Long id;
 
     @CreatedDate
     @Column(name = "created")
     @CreationTimestamp
-    private Date created;
+    Date created;
 
     @LastModifiedDate
     @Column(name = "updated")
     @UpdateTimestamp
-    private Date updated;
+    Date updated;
 }

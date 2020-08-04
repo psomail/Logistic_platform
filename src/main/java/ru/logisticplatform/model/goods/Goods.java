@@ -4,9 +4,11 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.model.BaseEntity;
+import ru.logisticplatform.model.order.Order;
 import ru.logisticplatform.model.user.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "goods")
@@ -44,5 +46,6 @@ public class Goods extends BaseEntity {
     @JoinColumn(name = "user_id")
     User user;
 
-
+    @ManyToMany(mappedBy = "goods", fetch = FetchType.LAZY)
+    List<Order> orders;
 }

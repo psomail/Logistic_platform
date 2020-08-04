@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.model.BaseEntity;
 import ru.logisticplatform.model.goods.Goods;
+import ru.logisticplatform.model.order.Order;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,42 +27,46 @@ import java.util.List;
 public class User extends BaseEntity {
 
     @Column(name = "username")
-    private String username;
+    String username;
 
     @Column(name = "first_name")
-    private String firstName;
+    String firstName;
 
     @Column(name = "last_name")
-    private String lastName;
+    String lastName;
 
     @Column(name = "email")
-    private String email;
+    String email;
 
     @Column(name = "phone")
-    private String phone;
+    String phone;
 
     @Column(name = "password")
-    private String password;
+    String password;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
-    private List<Role> roles;
+    List<Role> roles;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_usertypes",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "usertype_id", referencedColumnName = "id")})
-    private List<UserType> userTypes;
+    List<UserType> userTypes;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private UserStatus userStatus;
+    UserStatus userStatus;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     //@JsonIgnore
     List<Goods> goods;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    List<Order> orders;
+
 
     @Override
     public String toString() {
