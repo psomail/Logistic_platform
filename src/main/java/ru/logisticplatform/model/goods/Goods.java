@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.model.BaseEntity;
 import ru.logisticplatform.model.order.Order;
+import ru.logisticplatform.model.transportation.Transportation;
 import ru.logisticplatform.model.user.User;
 
 import javax.persistence.*;
@@ -48,4 +49,7 @@ public class Goods extends BaseEntity {
 
     @ManyToMany(mappedBy = "goods", fetch = FetchType.LAZY)
     List<Order> orders;
+
+    @ManyToMany(mappedBy = "goods", fetch = FetchType.LAZY)
+    List<Transportation> transportations;
 }

@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.model.BaseEntity;
+import ru.logisticplatform.model.deal.Deal;
 import ru.logisticplatform.model.goods.Goods;
 import ru.logisticplatform.model.user.User;
 
@@ -48,4 +49,7 @@ public class Order extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     OrderStatus orderStatus = OrderStatus.CREATED;
+
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    List<Deal> deals;
 }

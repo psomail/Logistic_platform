@@ -1,7 +1,8 @@
-package ru.logisticplatform.dto.user;
+package ru.logisticplatform.dto.user.admin;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import ru.logisticplatform.dto.user.UserDto;
 import ru.logisticplatform.model.user.UserStatus;
 
 

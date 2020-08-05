@@ -6,6 +6,7 @@ import lombok.experimental.FieldDefaults;
 import ru.logisticplatform.model.BaseEntity;
 import ru.logisticplatform.model.goods.Goods;
 import ru.logisticplatform.model.order.Order;
+import ru.logisticplatform.model.transportation.Transportation;
 
 import javax.persistence.*;
 import java.util.List;
@@ -67,6 +68,8 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
     List<Order> orders;
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    List<Transportation> transportations;
 
     @Override
     public String toString() {

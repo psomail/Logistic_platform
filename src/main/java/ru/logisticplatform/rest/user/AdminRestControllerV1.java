@@ -8,7 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.logisticplatform.dto.goods.admin.GoodsAdminDto;
-import ru.logisticplatform.dto.user.AdminUserDto;
+import ru.logisticplatform.dto.user.admin.AdminUserDto;
 import ru.logisticplatform.dto.utils.ObjectMapperUtils;
 import ru.logisticplatform.dto.user.UserDto;
 import ru.logisticplatform.model.goods.Goods;
